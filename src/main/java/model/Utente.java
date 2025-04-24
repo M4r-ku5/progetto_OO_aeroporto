@@ -1,5 +1,4 @@
 package model;
-//test
 /**
  * The type Utente.
  */
