@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.AdminDashboard">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="20" y="20" width="2054" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="765e6" class="javax.swing.JLabel">
+        <constraints/>
+        <properties>
+          <text value="Codice Volo"/>
+        </properties>
+      </component>
+      <component id="77780" class="javax.swing.JTextField" binding="codiceVoloTextField">
+        <constraints/>
+        <properties/>
+      </component>
+      <component id="f2def" class="javax.swing.JLabel">
+        <constraints/>
+        <properties>
+          <text value="Compagnia Aerea"/>
+        </properties>
+      </component>
+      <component id="aecf8" class="javax.swing.JTextField" binding="compagniaAereaTextField">
+        <constraints/>
+        <properties/>
+      </component>
+      <component id="ab1ff" class="javax.swing.JLabel">
+        <constraints/>
+        <properties>
+          <text value="Aeroporto di origine"/>
+        </properties>
+      </component>
+      <component id="28476" class="javax.swing.JTextField" binding="aeroportoOTextField">
+        <constraints/>
+        <properties/>
+      </component>
+      <component id="d1fb0" class="javax.swing.JLabel">
+        <constraints/>
+        <properties>
+          <text value="Aeroporto di destinazione"/>
+        </properties>
+      </component>
+      <component id="87c28" class="javax.swing.JTextField" binding="aeroportoDTextField">
+        <constraints/>
+        <properties/>
+      </component>
+      <component id="c6966" class="javax.swing.JLabel">
+        <constraints/>
+        <properties>
+          <text value="Data volo"/>
+        </properties>
+      </component>
+      <component id="7e5fe" class="javax.swing.JTextField" binding="dataVoloTextField">
+        <constraints/>
+        <properties/>
+      </component>
+      <component id="38bbb" class="javax.swing.JLabel">
+        <constraints/>
+        <properties>
+          <text value="Orario previsto"/>
+        </properties>
+      </component>
+      <component id="94bf7" class="javax.swing.JTextField" binding="orarioPrevistoTextField">
+        <constraints/>
+        <properties/>
+      </component>
+      <component id="d5892" class="javax.swing.JButton" binding="aggiungiVoloButton" default-binding="true">
+        <constraints/>
+        <properties>
+          <text value="Aggiungi volo"/>
+        </properties>
+      </component>
+      <component id="30138" class="javax.swing.JButton" binding="aggiornaVoloButton" default-binding="true">
+        <constraints/>
+        <properties>
+          <text value="Aggiorna volo"/>
+        </properties>
+      </component>
+      <component id="8e41b" class="javax.swing.JTable" binding="tabellaVoli">
+        <constraints/>
+        <properties/>
+      </component>
+    </children>
+  </grid>
+</form>
