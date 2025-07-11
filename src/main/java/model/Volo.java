@@ -1,73 +1,153 @@
 package model;
 
+import java.time.*;
+
+
+// ******************************************************************************************
+//  ************************************ CLASSE VOLO *****************************************
+//   ******************************************************************************************
+
 public class Volo {
 
-    private String codice;
+    /** Codice del Volo. */
+    private String codiceVolo;
+
+    /** Compagnia Aerea del Volo */
     private String compagniaAerea;
-    private String data;
-    private String orario;
-    private String ritardo;
-    private StatoDelVolo statoDelVolo;
+
+    /** Data del Volo. */
+    private LocalDate dataVolo;
+
+    /** Orario del Volo. */
+    private LocalTime orarioVolo;
+
+    /** Ritardo del Volo. */
+    private Duration ritardoVolo;
+
+    /** Stato del volo (PROGRAMMATO, IN_RITARDO, ATTERRATO, CANCELLATO) */
+    private StatoVolo statoDelVolo;
+
+    /** Riferimento al singolo Amministratore che gestisce i voli. */
+    private Amministratore amministratore;
 
 
-    public Volo (String codice, String compagniaAerea, String data,
-                 String orario, String ritardo, StatoDelVolo statoDelVolo) {
-
-        this.codice = codice;
+    /**
+     * Costruttore della classe Volo.
+     * @param codiceVolo Codice del Volo.
+     * @param compagniaAerea Compagnia Aerea del Volo.
+     * @param dataVolo Data del Volo.
+     * @param orarioVolo Orario del Volo.
+     * @param ritardoVolo Ritardo del Volo.
+     */
+    public Volo (String codiceVolo, String compagniaAerea, LocalDate dataVolo,
+                 LocalTime orarioVolo, Duration ritardoVolo) {
+        this.codiceVolo = codiceVolo;
         this.compagniaAerea = compagniaAerea;
-        this.data = data;
-        this.orario = orario;
-        this.ritardo = ritardo;
-        this.statoDelVolo = statoDelVolo;
-
+        this.dataVolo = dataVolo;
+        this.orarioVolo = orarioVolo;
+        this.ritardoVolo = ritardoVolo;
+        this.statoDelVolo = StatoVolo.PROGRAMMATO;
     }
 
 
-    public String getCodice () {
-        return codice;
+
+
+// *****************************************************************************************
+//  ****************************** METODI GETTER E SETTER ***********************************
+//   *****************************************************************************************
+
+    /**
+     * Getter di codiceVolo.
+     * @return codiceVolo.
+     */
+    public String getCodiceVolo() {
+        return codiceVolo;
     }
-    public void setCodice (String codice) {
-        this.codice = codice;
+
+    /**
+     * Setter di codiceVolo.
+     * @param codiceVolo Codice del Volo.
+     */
+    public void setCodiceVolo(String codiceVolo) {
+        this.codiceVolo = codiceVolo;
     }
 
 
-    public String getCompagniaAerea () {
+    /**
+     * Getter di compagniaAerea.
+     * @return compagniaAerea.
+     */
+    public String getCompagniaAerea() {
         return compagniaAerea;
     }
-    public void setCompagniaAerea (String compagniaAerea) {
+
+    /**
+     * Setter di compagniaAerea.
+     * @param compagniaAerea Compagnia Aerea del Volo.
+     */
+    public void setCompagniaAerea(String compagniaAerea) {
         this.compagniaAerea = compagniaAerea;
     }
 
 
-    public String getData () {
-        return data;
-    }
-    public void setData (String data) {
-        this.data = data;
-    }
-
-
-    public String getOrario () {
-        return orario;
-    }
-    public void setOrario (String orario) {
-        this.orario = orario;
+    /**
+     * Getter di dataVolo.
+     * @return dataVolo.
+     */
+    public LocalDate getDataVolo() {
+        return dataVolo;
     }
 
-
-    public String getRitardo () {
-        return ritardo;
-    }
-    public void setRitardo (String ritardo) {
-        this.ritardo = ritardo;
+    /**
+     * Setter di dataVolo.
+     * @param dataVolo Data del Volo.
+     */
+    public void setDataVolo(LocalDate dataVolo) {
+        this.dataVolo = dataVolo;
     }
 
 
-    public StatoDelVolo getStatoDelVolo() {
+    /**
+     * Getter di orarioVolo.
+     * @return orarioVolo.
+     */
+    public LocalTime getOrarioVolo() {
+        return orarioVolo;
+    }
+
+    /**
+     * Setter di orarioVolo.
+     * @param orarioVolo Orario del Volo.
+     */
+    public void setOrarioVolo(LocalTime orarioVolo) {
+        this.orarioVolo = orarioVolo;
+    }
+
+
+    /**
+     * Getter di ritardoVolo.
+     * @return ritardoVolo.
+     */
+    public Duration getRitardoVolo() {
+        return ritardoVolo;
+    }
+
+    /**
+     * Setter di ritardoVolo.
+     * @param ritardoVolo Orario del Volo.
+     */
+    public void setRitardoVolo(Duration ritardoVolo) {
+        this.ritardoVolo = ritardoVolo;
+    }
+
+
+    /**
+     * Setter di statoDelVolo.
+     * @return statoDelVolo.
+     */
+    public StatoVolo getStatoDelVolo() {
         return statoDelVolo;
     }
-    public void setStatoDelVolo (StatoDelVolo statoDelVolo) {
-        this.statoDelVolo = statoDelVolo;
-    }
+
 
 }

@@ -1,28 +1,56 @@
 package model;
+
 import java.util.ArrayList;
 import java.util.List;
 
+
+// ******************************************************************************************
+//  ******************************* CLASSE AMMINISTRATORE ************************************
+//   ******************************************************************************************
+
 public class Amministratore extends Utente {
 
-    private List<Volo> listaVoli;
+    /** Lista di voli */
+    private List<Volo> voli;
 
-    public Amministratore (String login, String password, Volo volo_1) {
-        super (login, password);
-        this.listaVoli = new ArrayList<>();
-        listaVoli.add(volo_1);
+    /**
+     * Costruttore della classe Amministratore.
+     * @param login Login dell'Utente.
+     * @param password Password dell'Utente.
+     */
+    public Amministratore (String login, String password) {
+        super(login, password);
+        this.voli = new ArrayList<>();
     }
 
 
-    public List<Volo> getListaVoli() {
-        return listaVoli;
+
+
+// *****************************************************************************************
+//  ****************************** METODI GETTER E SETTER ***********************************
+//   *****************************************************************************************
+
+    /**
+     * Getter di voli.
+     * @return voli.
+     */
+    public List<Volo> getVoli () {
+        return voli;
     }
 
-    public void setListaVoli(List<Volo> listaVoli) {
-        this.listaVoli = listaVoli;
+
+
+
+    // ************************************************************************************
+    //  ************************************** METODI **************************************
+    //   ************************************************************************************
+
+    public void inserisciVolo (Volo v) {
+        voli.add(v);
     }
 
+    public void aggiornaVolo () {}
 
-    public void inserisciVolo () { };
-    public void aggiornaVolo () { };
-    public void assegnaGate () { };
+    public void assegnaGate () {}
+
 }

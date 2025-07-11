@@ -1,10 +1,8 @@
 package model;
 
-public enum StatoDelVolo {
-
+public enum StatoVolo {
     PROGRAMMATO,
     IN_RITARDO,
     ATTERRATO,
-    CANCELATO;
-
+    CANCELLATO
 }

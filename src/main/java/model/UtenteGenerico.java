@@ -1,26 +1,63 @@
 package model;
+
 import java.util.ArrayList;
 import java.util.List;
 
+
+// ******************************************************************************************
+//  ******************************* CLASSE AMMINISTRATORE ************************************
+//   ******************************************************************************************
+
 public class UtenteGenerico extends Utente {
 
-    private List<Prenotazione> listaPrenotazioni;
+    /** Lista delle prenotazioni. */
+    private ArrayList<Prenotazione> prenotazioni;
 
-    public UtenteGenerico(String login, String password, Prenotazione prenotazione_1) {
+    /**
+     * Costruttore della classe UtenteGenerico.
+     * @param login Login dell'Utente.
+     * @param password Password dell'Utente.
+     */
+    public UtenteGenerico(String login, String password) {
         super(login, password);
-        this.listaPrenotazioni = new ArrayList<>();
-        listaPrenotazioni.add(prenotazione_1);
+        this.prenotazioni = new ArrayList<>();
     }
 
-    public List<Prenotazione> getPrenotazione() {
-        return listaPrenotazioni;
+
+
+
+// *****************************************************************************************
+//  ****************************** METODI GETTER E SETTER ***********************************
+//   *****************************************************************************************
+
+    /**
+     * Getter di prenotazioni
+     * @return prenotazioni
+     */
+    public List<Prenotazione> getPrenotazioni () {
+        return prenotazioni;
     }
 
+    /**
+     * Metodo per l'aggiunta di una prenotazione. Aggiunge la prenotazione passata per
+     * parametro e poi la lega all'Utente tramite il metodo setUtente di Prenotazione..
+     * @param p Prenotazione da aggiungere.
+     */
     public void aggiungiPrenotazione (Prenotazione p) {
-        listaPrenotazioni.add(p);
+        prenotazioni.add(p);
+        p.setUtenteGenerico(this);
     }
 
-    public void effettuaPrenotazione () { };
-    public void cercaPrenotazione () { };
-    public void inserisciGate () { };
+
+
+
+    // ************************************************************************************
+    //  ************************************** METODI **************************************
+    //   ************************************************************************************
+
+    public void effettuaPrenotazione () {}
+
+    public void cercaPrenotazione () {}
+
+    public void modificaPrenotazione () {}
 }
