@@ -31,6 +31,8 @@ public class Volo {
     private Amministratore amministratore;
 
 
+
+
     /**
      * Costruttore della classe Volo.
      * @param codiceVolo Codice del Volo.
@@ -142,12 +144,19 @@ public class Volo {
 
 
     /**
-     * Setter di statoDelVolo.
+     * Getter di statoDelVolo.
      * @return statoDelVolo.
      */
     public StatoVolo getStatoDelVolo() {
         return statoDelVolo;
     }
 
+    /**
+     * Setter di statoDelVolo.
+     * @param statoDelVolo Stato del Volo.
+     */
+    public  void setStatoDelVolo(StatoVolo statoDelVolo) {
+        this.statoDelVolo = statoDelVolo;
+    }
 
 }

@@ -13,6 +13,9 @@ public class Amministratore extends Utente {
     /** Lista di voli */
     private List<Volo> voli;
 
+
+
+
     /**
      * Costruttore della classe Amministratore.
      * @param login Login dell'Utente.
@@ -45,9 +48,7 @@ public class Amministratore extends Utente {
     //  ************************************** METODI **************************************
     //   ************************************************************************************
 
-    public void inserisciVolo (Volo v) {
-        voli.add(v);
-    }
+    public void inserisciVolo () {}
 
     public void aggiornaVolo () {}
 

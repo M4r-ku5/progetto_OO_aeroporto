@@ -77,4 +77,5 @@ public class Utente {
      * Metodo per l'accesso dell'Utente tramite le credenziali.
      */
     public void accedi () {}
+
 }

@@ -5,13 +5,16 @@ import java.util.List;
 
 
 // ******************************************************************************************
-//  ******************************* CLASSE AMMINISTRATORE ************************************
+//  ********************************* CLASSE UTENTE GENERICO *********************************
 //   ******************************************************************************************
 
 public class UtenteGenerico extends Utente {
 
     /** Lista delle prenotazioni. */
     private ArrayList<Prenotazione> prenotazioni;
+
+
+
 
     /**
      * Costruttore della classe UtenteGenerico.
@@ -38,24 +41,23 @@ public class UtenteGenerico extends Utente {
         return prenotazioni;
     }
 
+
+
+
+// ************************************************************************************
+//  ************************************** METODI **************************************
+//   ************************************************************************************
+
     /**
-     * Metodo per l'aggiunta di una prenotazione. Aggiunge la prenotazione passata per
-     * parametro e poi la lega all'Utente tramite il metodo setUtente di Prenotazione..
+     * Metodo per effettuare una prenotazione. Aggiunge la prenotazione passata per
+     * parametro e poi la lega all'Utente tramite il metodo setUtente di Prenotazione.
      * @param p Prenotazione da aggiungere.
      */
-    public void aggiungiPrenotazione (Prenotazione p) {
+    public void effettuaPrenotazione (Prenotazione p) {
         prenotazioni.add(p);
         p.setUtenteGenerico(this);
     }
 
-
-
-
-    // ************************************************************************************
-    //  ************************************** METODI **************************************
-    //   ************************************************************************************
-
-    public void effettuaPrenotazione () {}
 
     public void cercaPrenotazione () {}
 
