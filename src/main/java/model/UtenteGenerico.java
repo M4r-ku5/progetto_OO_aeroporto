@@ -34,11 +34,11 @@ public class UtenteGenerico extends Utente {
 //   *****************************************************************************************
 
     /**
-     * Getter di prenotazioni
-     * @return prenotazioni
+     * Getter di prenotazioni. Ritorna una copia della lista di prenotazioni originale.
+     * @return new ArrayList<>(this.prenotazioni).
      */
     public List<Prenotazione> getPrenotazioni () {
-        return prenotazioni;
+        return new ArrayList<>(this.prenotazioni);
     }
 
 
@@ -49,17 +49,25 @@ public class UtenteGenerico extends Utente {
 //   ************************************************************************************
 
     /**
-     * Metodo per effettuare una prenotazione. Aggiunge la prenotazione passata per
-     * parametro e poi la lega all'Utente tramite il metodo setUtente di Prenotazione.
+     * Metodo per aggiungere una prenotazione.
      * @param p Prenotazione da aggiungere.
      */
     public void effettuaPrenotazione (Prenotazione p) {
+
+        // Aggiunge la Prenotazione alla lista di prenotazioni.
         prenotazioni.add(p);
+
+        // Imposta il collegamento tra l'Utente Generico che effettua la Prenotazione e la
+        // Prenotazione stessa.
         p.setUtenteGenerico(this);
     }
 
 
-    public void cercaPrenotazione () {}
+    public void cercaPrenotazione () {
+        // La logica è implementata nel controller.
+    }
 
-    public void modificaPrenotazione () {}
+    public void modificaPrenotazione () {
+        // La logica è implementata nel controller.
+    }
 }

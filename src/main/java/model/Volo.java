@@ -1,6 +1,8 @@
 package model;
 
-import java.time.*;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 
 // ******************************************************************************************
@@ -27,7 +29,7 @@ public class Volo {
     /** Stato del volo (PROGRAMMATO, IN_RITARDO, ATTERRATO, CANCELLATO) */
     private StatoVolo statoDelVolo;
 
-    /** Riferimento al singolo Amministratore che gestisce i voli. */
+    /** Riferimento al singolo Amministratore che gestisce una lista di Voli. */
     private Amministratore amministratore;
 
 
@@ -157,6 +159,23 @@ public class Volo {
      */
     public  void setStatoDelVolo(StatoVolo statoDelVolo) {
         this.statoDelVolo = statoDelVolo;
+    }
+
+
+    /**
+     * Getter di Amministratore.
+     * @return amministratore.
+     */
+    public Amministratore getAmministratore() {
+        return amministratore;
+    }
+
+    /**
+     * Setter di Amministratore.
+     * @param amministratore Riferimento al singolo Amministratore che gestisce una lista di Voli.
+     */
+    public void setAmministratore(Amministratore amministratore) {
+        this.amministratore = amministratore;
     }
 
 }

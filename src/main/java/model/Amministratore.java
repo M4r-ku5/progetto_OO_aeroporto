@@ -34,24 +34,31 @@ public class Amministratore extends Utente {
 //   *****************************************************************************************
 
     /**
-     * Getter di voli.
-     * @return voli.
+     * Getter di voli. Ritorna una copia della lista dei Voli.
+     * @return new ArrayList<>(this.voli).
      */
     public List<Volo> getVoli () {
-        return voli;
+        return new ArrayList<>(this.voli);
     }
 
 
 
 
-    // ************************************************************************************
-    //  ************************************** METODI **************************************
-    //   ************************************************************************************
+// ************************************************************************************
+//  ************************************** METODI **************************************
+//   ************************************************************************************
 
-    public void inserisciVolo () {}
+    public void inserisciVolo (Volo v) {
+        this.voli.add(v);
+        v.setAmministratore(this);
+    }
 
-    public void aggiornaVolo () {}
+    public void aggiornaVolo () {
+        // Implementato nel controller.
+    }
 
-    public void assegnaGate () {}
+    public void assegnaGate () {
+        // Implementato nel controller.
+    }
 
 }

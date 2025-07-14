@@ -22,6 +22,9 @@ public class Prenotazione {
     /** Riferimento al singolo Utente che effettua le prenotazioni. */
     private UtenteGenerico utenteGenerico;
 
+    /** Riferimento al Volo In Partenza specifico della Prenotazione. */
+    private VoloInPartenza voloInPartenza;
+
 
 
 
@@ -105,6 +108,14 @@ public class Prenotazione {
         return statoDellaPrenotazione;
     }
 
+    /**
+     * Setter di statoDellaPrenotazione.
+     * @param statoDellaPrenotazione Stato della Prenotazione.
+     */
+    public void setStatoDellaPrenotazione(StatoPrenotazione statoDellaPrenotazione) {
+        this.statoDellaPrenotazione = statoDellaPrenotazione;
+    }
+
 
     /**
      * Getter di UtenteGenerico.
@@ -120,6 +131,23 @@ public class Prenotazione {
      */
     public void setUtenteGenerico (UtenteGenerico utenteGenerico) {
         this.utenteGenerico = utenteGenerico;
+    }
+
+
+    /**
+     * Getter di volo.
+     * @return il volo associato alla prenotazione.
+     */
+    public VoloInPartenza getVoloInPartenza () {
+        return voloInPartenza;
+    }
+
+    /**
+     * Setter di volo.
+     * @param voloInPartenza Il VoloInPartenza da associare.
+     */
+    public void setVoloInPartenza(VoloInPartenza voloInPartenza) {
+        this.voloInPartenza = voloInPartenza;
     }
 
 }

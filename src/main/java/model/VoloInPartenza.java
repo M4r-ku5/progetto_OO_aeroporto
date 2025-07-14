@@ -3,6 +3,8 @@ package model;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
+import java.util.ArrayList;
 
 
 // ******************************************************************************************
@@ -16,6 +18,8 @@ public class VoloInPartenza extends Volo {
 
     /** Riferimento al Gate associato. */
     private Gate gate;
+
+    private List<Prenotazione> prenotazioni;
 
 
 
@@ -34,6 +38,7 @@ public class VoloInPartenza extends Volo {
 
         super(codiceVolo, compagniaAerea, dataVolo, orarioVolo, ritardoVolo);
         this.aeroportoDestinazione =  aeroportoDestinazione;
+        this.prenotazioni = new ArrayList<>();
 
     }
 
@@ -75,6 +80,32 @@ public class VoloInPartenza extends Volo {
      */
     public void setGate(Gate gate) {
         this.gate = gate;
+    }
+
+
+    /**
+     * Restituisce una copia della lista delle prenotazioni per proteggere l'originale.
+     * @return new ArrayList<>(this.prenotazioni).
+     */
+    public List<Prenotazione> getPrenotazioni() {
+        return new ArrayList<>(this.prenotazioni);
+    }
+
+
+
+
+// ************************************************************************************
+//  ************************************** METODI **************************************
+//   ************************************************************************************
+
+    /**
+     * Metodo che aggiunge la Prenotazione alla lista di prenotazioni di questo Volo e imposta
+     * il collegamento col Volo.
+     * @param p La Prenotazione da aggiungere.
+     */
+    public void aggiungiPrenotazione(Prenotazione p) {
+        this.prenotazioni.add(p);
+        p.setVoloInPartenza(this);
     }
 
 }
