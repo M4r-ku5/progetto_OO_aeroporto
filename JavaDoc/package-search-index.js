@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"controller"},{"l":"dao.postgres"},{"l":"dao.util"},{"l":"gui"},{"l":"gui.admin"},{"l":"gui.admin.operazioni"},{"l":"gui.guest"},{"l":"gui.user"},{"l":"gui.user.operazioni"},{"l":"model.prenotazione"},{"l":"model.utenti"},{"l":"model.volo"}];updateSearchResults();
