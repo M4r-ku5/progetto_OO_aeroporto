@@ -5,15 +5,38 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LoginForm {
-    private JPanel rootPanel;
-    private JTextField usernameField;
-    private JPasswordField passwordField;
-    private JButton loginButton;
 
+
+// ******************************************************************************************
+//  ********************************* CLASSE LOGIN FORM **************************************
+//   ******************************************************************************************
+
+/**
+ * Form di login per l'autenticazione degli utenti nel sistema.
+ * Gestisce il login degli utenti e l'accesso come guest.
+ */
+public class LoginForm {
+    /** Pannello principale del form di login. */
+    private JPanel rootPanel;
+    /** Campo di testo per l'inserimento dell'username. */
+    private JTextField usernameField;
+    /** Campo di testo per l'inserimento della password. */
+    private JPasswordField passwordField;
+    /** Pulsante per effettuare il login. */
+    private JButton loginButton;
+    /** Pulsante per accedere come guest. */
+    private JButton guestButton;
+
+    /** Riferimento al frame principale dell'applicazione. */
     private MainFrame mainFrame;
+    /** Riferimento al controller principale dell'applicazione. */
     private Controller controller;
 
+    /**
+     * Costruttore di LoginForm.
+     * @param mainFrame Il frame principale
+     * @param controller Il controller
+     */
     public LoginForm(MainFrame mainFrame, Controller controller) {
         this.mainFrame = mainFrame;
         this.controller = controller;
@@ -24,27 +47,43 @@ public class LoginForm {
                 String username = usernameField.getText();
                 String password = new String(passwordField.getPassword());
 
-                if (controller.login(username, password)) {
-                    // Pulisci i campi dopo il login
-                    usernameField.setText("");
-                    passwordField.setText("");
+                try {
+                    if (controller.login(username, password)) {
+                        usernameField.setText("");
+                        passwordField.setText("");
 
-                    if (controller.isAmministratore()) {
-                        mainFrame.showPanel("ADMIN");
+                        if (controller.isAmministratore()) {
+                            mainFrame.showPanel("ADMIN");
+                        } else {
+                            mainFrame.showPanel("USER");
+                        }
                     } else {
-                        // mainFrame.showPanel("USER"); // Logica per l'utente generico
-                        JOptionPane.showMessageDialog(rootPanel, "Login Utente Riuscito! (Pannello non ancora implementato)");
+                        JOptionPane.showMessageDialog(rootPanel,
+                                "Login fallito. Credenziali non valide.",
+                                "Errore",
+                                JOptionPane.ERROR_MESSAGE);
                     }
-                } else {
+                } catch (RuntimeException ex) {
                     JOptionPane.showMessageDialog(rootPanel,
-                            "Login fallito. Credenziali non valide.",
+                            "Errore durante il login: " + ex.getMessage(),
                             "Errore",
                             JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
+
+        guestButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mainFrame.showPanel("GUEST");
+            }
+        });
     }
 
+    /**
+     * Restituisce il pannello principale.
+     * @return il root panel
+     */
     public JPanel getRootPanel() {
         return rootPanel;
     }
